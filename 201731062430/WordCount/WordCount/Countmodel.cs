@@ -105,7 +105,17 @@ namespace WordCount
             for (int i = 0; i < Word_str.Count; i++)
             {
 
-                char[] cm = Word_str[i].ToArray();
+                string Regexg = "^[A-Za-z]{4}.*";
+                if (!Regex.IsMatch(Word_str[i], Regexg))
+                {
+                    Word_str.Remove(Word_str[i]);
+                    i--;
+                }
+                else
+                {
+                    Word_num++;
+                }
+                /*char[] cm = Word_str[i].ToArray();
                 if (cm.Length >= 4)
                 {
                     int j;
@@ -128,7 +138,7 @@ namespace WordCount
                 {
                     Word_str.Remove(Word_str[i]);
                     i--;
-                }
+                }*/
             }
             return Word_num;
         }

@@ -61,7 +61,7 @@ namespace WordCount
             string[] pmr = new string[4];
             Pmr_juge(args, pmr);
             
-            Countmodel wc = new Countmodel(pmr[0]);//
+            Countmodel wc = new Countmodel(pmr[0]);
 
             Console.WriteLine("characters:{0}", wc.CountChar());
             Console.WriteLine("words:{0}", wc.CountWord());
@@ -69,7 +69,7 @@ namespace WordCount
             wc.CountWords(int.Parse(pmr[1]));
             wc.SortWords();
             wc.print(int.Parse(pmr[2]));
-            wc.Out_file(pmr[3]);//
+            wc.Out_file(pmr[3]);
             //Console.ReadKey();
         }
     }
